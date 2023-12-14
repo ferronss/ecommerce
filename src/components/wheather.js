@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const API_KEY = '70013a6aaaf7cb6e5b95e83dc07308d1'; // Sostituisci con la tua chiave API
+const API_KEY = '70013a6aaaf7cb6e5b95e83dc07308d1'; // Sostituisci con la tua chiave api
 
 export default class Weather extends Component {
   state = {
@@ -24,13 +24,13 @@ export default class Weather extends Component {
           .then(weatherData => {
             console.log(weatherData); // Controlla i dati restituiti dall'API
 
-            // Ottieni il nome della città dalla risposta dell'API
+            // Ottieni il nome della città dalla risposta dell api
             const cityName = weatherData.name;
 
             // Aggiorna lo stato con i dati ricevuti
             this.setState({ weatherData, cityName });
 
-            // Chiamata API per ottenere la previsione del tempo
+            // Chiamata api per ottenere la previsione del tempo
             fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
               .then(response => response.json())
               .then(forecastData => {
